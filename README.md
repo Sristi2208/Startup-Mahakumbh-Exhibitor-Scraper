@@ -8,16 +8,17 @@ It extracts the following information:
 - **Address**
 - **Contact Person**
 - **Designation**
+- **Contact Details**
 - **Profile**
 
-All data is saved in a clean CSV format (`exhibitors.csv`) for further use or analysis.
+All data is saved in a clean CSV format (`exhibitors_selenium.csv`) for further use or analysis.
 
 ---
 
 ## 📁 Files Included
 
-- `scrape_exhibitors.py` – Main scraping script.
-- `exhibitors.csv` – Output CSV with all scraped company data.
+- `scrape_exhibitors_selenium.py` – Main scraping script.
+- `exhibitors_selenium.csv` – Output CSV with all scraped company data.
 - `README.md` – This documentation file.
 
 ---
@@ -30,8 +31,8 @@ Install required libraries:
 
 ```bash
 pip install requests beautifulsoup4
-
-python scrape_exhibitors.py
+pip install selenium
+python scrape_exhibitors_selenium.py
 ```
 
 This will:
@@ -40,7 +41,7 @@ Fetch exhibitor listings for every letter A–Z.
 
 Parse the HTML data to extract required fields.
 
-Save the data to exhibitors.csv.
+Save the data to exhibitors_selenium.csv.
 
 
 ## 🧠 How It Works
@@ -49,7 +50,7 @@ Save the data to exhibitors.csv.
 - Builds URLs like:
 https://startupmahakumbh.org/exhibitor_directory/exhi_list_pub.php?event_name=sm&event_year=2025&filter=A
 
-- Fetches the page content using requests.
+- Fetches the page content using selenium.
 
 - Parses exhibitor blocks inside div class="details" using BeautifulSoup.
 
